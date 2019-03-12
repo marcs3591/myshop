@@ -809,10 +809,6 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 }
 
 .aimeos .suggest-item .item-image {
-	background-image: url(media/aimeos.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
 	vertical-align: middle;
 	display: inline-block;
 	height: 5em;
@@ -850,15 +846,10 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 
 /* media list */
 .catalog-list a .media-list {
-	background-color: #FFFFFF;
-	background-image: url(media/aimeos.png);
-	background-repeat: no-repeat;
-	background-position: center;
-	background-size: contain;
 	position: relative;
 	text-align: center;
 	overflow: hidden;
-	height: 320px;
+	height: 180px;
 	width: 240px;
 }
 
@@ -866,10 +857,10 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 	background-color: #FFFFFF;
 	background-image: url(media/progress.gif);
 	background-repeat: no-repeat;
-	background-position: center;
+	
 	background-size: contain;
 	position: relative;
-	height: 320px;
+	height: 180px;
 	width: 240px;
 }
 
@@ -893,7 +884,6 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 	overflow: hidden;
 	height: 2em;
 	margin: 0;
-    margin-bottom: 1rem;
 }
 
 .aimeos .product .text-list .text-item {
