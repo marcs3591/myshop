@@ -375,6 +375,7 @@
 	display: inline-block;
 	vertical-align: top;
 	margin: 0px 0.5em;
+	background-color: #FB9806;
 }
 
 .catalog-filter-tree .media-item img {
@@ -479,6 +480,7 @@
 	width: 33.33%;
 	padding: 0.5em;
 	margin: 0 0 1em 0;
+	background-color: #FB9806;
 }
 
 .catalog-filter-tree ul {
@@ -555,6 +557,7 @@ html.no-js .catalog-filter-tree:hover > ul {
 	display: block;
 	padding: 0.5em;
 	margin: 0 0 1em 0;
+	background-color: #FB9806;
 }
 
 .catalog-filter-attribute .attribute-lists,
