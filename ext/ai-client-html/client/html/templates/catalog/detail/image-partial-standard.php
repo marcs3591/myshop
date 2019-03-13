@@ -36,9 +36,9 @@ $mediaItems = $this->get( 'mediaItems', [] );
 
 
 ?>
-<div class="catalog-detail-image">
+<div class="catalog-detail-image" id="catimg">
 
-	<div class="image-single" data-pswp="{bgOpacity: 0.75, shareButtons: false}">
+	<div class="image-single" id="imgsg" data-pswp="{bgOpacity: 0.75, shareButtons: false}">
 
 		<?php foreach( $mediaItems as $id => $mediaItem ) : ?>
 			<?php $mediaUrl = $enc->attr( $this->content( $mediaItem->getUrl() ) ); ?>
@@ -58,9 +58,9 @@ $mediaItems = $this->get( 'mediaItems', [] );
 	</div><!--
 
 	--><?php if( count( $mediaItems ) > 1 ) : $class = 'item selected'; ?>
-		<div class="image-thumbs thumbs-horizontal" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'><!--
-			--><button type="button" class="slick-prev"><?= $enc->html( $this->translate( 'client', 'Previous' ) ); ?></button><!--
-			--><div class="thumbs"><!--
+		<div class="image-thumbs thumbs-horizontal" id="thb" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'><!--
+			--><button type="button" class="slick-prev" id="slk1"><?= $enc->html( $this->translate( 'client', 'Previous' ) ); ?></button><!--
+			--><div class="thumbs" id="thb1"><!--
 
 				<?php foreach( $mediaItems as $id => $mediaItem ) : ?>
 					<?php $previewUrl = $enc->attr( $this->content( $mediaItem->getPreview() ) ); ?>
@@ -73,7 +73,7 @@ $mediaItems = $this->get( 'mediaItems', [] );
 				<?php endforeach; ?>
 
 			--></div><!--
-			--><button type="button" class="slick-next"><?= $enc->html( $this->translate( 'client', 'Next' ) ); ?></button><!--
+			--><button type="button" class="slick-next" id="slk2"><?= $enc->html( $this->translate( 'client', 'Next' ) ); ?></button><!--
 		--></div>
 	<?php endif; ?>
 

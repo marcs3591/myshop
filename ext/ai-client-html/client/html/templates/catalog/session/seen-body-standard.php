@@ -29,16 +29,16 @@ $count = $this->config( 'client/html/catalog/session/seen/count/enable', 1 );
 <?php $this->block()->start( 'catalog/session/seen' ); ?>
 <section class="catalog-session-seen">
 
-	<h2 class="header">
+	<h2 class="header" id="seenheader">
 		<?= $this->translate( 'client', 'Last seen' ); ?>
 		<?php if( $count ) : ?>
 			<span class="count"><?= count( $seenList ); ?></span>
 		<?php endif; ?>
 	</h2>
 
-	<ul class="seen-items">
+	<ul class="seen-items" id="seenit">
 		<?php foreach( $seenList as $seen ) : ?>
-			<li class="seen-item">
+			<li class="seen-item" >
 				<?= $seen; ?>
 			</li>
 		<?php endforeach; ?>

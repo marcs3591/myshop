@@ -280,7 +280,7 @@ if( isset( $this->detailProductItem ) )
 									name="<?= $enc->attr( $this->formparam( array( 'b_prod', 0, 'quantity' ) ) ); ?>"
 									min="1" max="2147483647" maxlength="10" step="1" required="required" value="1"
 								/>
-								<button class="btn btn-primary btn-lg" type="submit" value="" <?= $disabled ?> >
+								<button class="btn btn-primary btn-lg" id="btnord" type="submit" value="" <?= $disabled ?> >
 									<?= $enc->html( $this->translate( 'client', 'Add to basket' ), $enc::TRUST ); ?>
 								</button>
 							</div>
@@ -332,7 +332,7 @@ if( isset( $this->detailProductItem ) )
 			</div>
 
 
-			<div class="col-sm-12">
+			<div class="col-sm-12" id="soc">
 
 				<?php if( $this->detailProductItem->getType() === 'bundle'
 					&& ( $posItems = $this->detailProductItem->getRefItems( 'product', null, 'default' ) ) !== []

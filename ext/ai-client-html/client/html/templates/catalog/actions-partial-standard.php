@@ -59,7 +59,7 @@ $urls = array(
 
 
 ?>
-<div class="catalog-actions">
+<div class="catalog-actions" id="actl">
 	<?php foreach( $list as $entry ) : ?>
 		<?php if( isset( $urls[$entry] ) ) : ?>
 

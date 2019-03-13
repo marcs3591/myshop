@@ -106,7 +106,7 @@ $count = $this->config( 'client/html/catalog/session/pinned/count/enable', 1 );
 <?php $this->block()->start( 'catalog/session/pinned' ); ?>
 <section class="catalog-session-pinned">
 
-	<h2 class="header">
+	<h2 class="header" id="pinnedheader">
 		<?= $this->translate( 'client', 'Pinned products' ); ?>
 		<?php if( $count ) : ?>
 			<span class="count"><?= count( $pinList ); ?></span>
@@ -119,7 +119,7 @@ $count = $this->config( 'client/html/catalog/session/pinned/count/enable', 1 );
 			<?php $pinParams = array( 'pin_action' => 'delete', 'pin_id' => $id ) + $params; ?>
 			<?php $detailParams = array( 'd_name' => $productItem->getName( 'url' ), 'd_prodid' => $id ); ?>
 
-			<li class="pinned-item">
+			<li class="pinned-item" id="">
 				<a class="modify" href="<?= $this->url( $pinTarget, $pinController, $pinAction, $pinParams, [], $pinConfig ); ?>">
 					<?= $this->translate( 'client', 'X' ); ?>
 				</a>
@@ -128,12 +128,12 @@ $count = $this->config( 'client/html/catalog/session/pinned/count/enable', 1 );
 
 					<?php $mediaItems = $productItem->getRefItems( 'media', 'default', 'default' ); ?>
 					<?php if( ( $mediaItem = reset( $mediaItems ) ) !== false ) : ?>
-						<div class="media-item" style="background-image: url('<?= $this->content( $mediaItem->getPreview() ); ?>')"></div>
+						<div class="media-item" id="sesimpin" style="background-image: url('<?= $this->content( $mediaItem->getPreview() ); ?>')"></div>
 					<?php else : ?>
-						<div class="media-item"></div>
+						<div class="media-item" ></div>
 					<?php endif; ?>
 
-					<h3 class="name"><?= $enc->html( $productItem->getName(), $enc::TRUST ); ?></h3>
+					<div class="name" id="sesimpinname"><?= $enc->html( $productItem->getName(), $enc::TRUST ); ?></div>
 					<div class="price-list">
 						<?= $this->partial(
 							$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
