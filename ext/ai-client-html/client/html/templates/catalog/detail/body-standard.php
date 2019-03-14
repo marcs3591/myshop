@@ -328,8 +328,48 @@ if( isset( $this->detailProductItem ) )
 					$this->config( 'client/html/catalog/partials/social', 'catalog/social-partial-standard.php' ),
 					array( 'productItem' => $this->detailProductItem )
 				); ?>
+<?php if( $this->detailProductItem->getType() === 'bundle'
+					&& ( $posItems = $this->detailProductItem->getRefItems( 'product', null, 'default' ) ) !== []
+					&& ( $products = $getProductList( $posItems, $prodItems ) ) !== [] ) : ?>
 
+					<!--<section class="catalog-detail-bundle">
+						<h2 class="header"><?= $this->translate( 'client', 'Bundled products' ); ?></h2>
+						<?= $this->partial(
+							$this->config( 'client/html/common/partials/products', 'common/partials/products-standard.php' ),
+							array( 'products' => $products, 'itemprop' => 'isRelatedTo' )
+						); ?>
+					</section>-->
+
+				<?php endif; ?>
+
+
+				<div class="catalog-detail-additional">
+
+					<?php if( ( $textItems = $this->detailProductItem->getRefItems( 'text', 'long' ) ) !== [] ) : ?>
+						<div class="additional-box">
+							<h2 class="header description"><?= $enc->html( $this->translate( 'client', 'Description' ), $enc::TRUST ); ?></h2>
+							<div class="content description">
+								<?php foreach( $textItems as $textItem ) : ?>
+									<div class="long item"><?= $enc->html( $textItem->getContent(), $enc::TRUST ); ?></div>
+								<?php endforeach; ?>
+							</div>
+						</div>
+					<?php endif; ?>
+	
+
+						<div class="catalog-detail-additional">
+
+					
+						<div class="additional-box">
+							<h2 class="header description">Price details</h2>
+							<div class="content description"></div>
+								
+							</div>
+						</div>
+					
 			</div>
+			</div>
+			
 
 
 			<div class="col-sm-12" id="soc">
