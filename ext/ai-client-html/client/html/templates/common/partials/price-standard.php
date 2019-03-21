@@ -25,7 +25,7 @@ $format = array(
 	/// Rebate format with rebate value (%1$s) and currency (%2$s)
 	'rebate' => $this->translate( 'client', '%1$s %2$s off' ),
 	/// Rebate percent format with rebate percent value (%1$s)
-	'rebate%' => $this->translate( 'client', '+ rep val%1$s%%' ),
+	'rebate%' => $this->translate( 'client', '+ ремонт %1$s%%' ),
 );
 /// Tax rate format with tax rate in percent (%1$s)
 $withtax = $this->translate( 'client', '' );

@@ -26,10 +26,10 @@
 
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 				<ul class="nav navbar-nav">
-					<li><a href="/list">Home</a></li>
-					<li><a href="/list">About us</a></li>
-					<li><a href="/list">Contact us</a></li>
-					<li><a href="/list">Your auto from USA</a></li>
+					<li><a href="/list">Главная</a></li>
+					<li><a href="/list">О нас</a></li>
+					<li><a href="/list">Свяжитесь с нами</a></li>
+					<li><a href="/list">Авто из США</a></li>
 				</ul>
 
 				<div class="nav navbar-nav navbar-right">
