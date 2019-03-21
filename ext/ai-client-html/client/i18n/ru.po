@@ -120,7 +120,7 @@ msgid "Account"
 msgstr "Учётная запись"
 
 msgid "Add to basket"
-msgstr "Добавить в корзину"
+msgstr "Заказать сейчас"
 
 msgid "Additional"
 msgstr "Дополнительно"

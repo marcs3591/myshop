@@ -1524,7 +1524,7 @@ $(".level-0").show();
 $(".catalog-filter-supplier").hide();
 $(".attribute-lists").show();
 $(".attr-list").show();
-$(".calcu").show();
+
 	
 
 

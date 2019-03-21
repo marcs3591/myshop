@@ -1272,7 +1272,7 @@ max-height: 20em;
   #catimg {
 	width:100%;
 	
-    max-height: 330px;
+    max-height: 370px;
 	 position:relative;
 	vertical-align:top;
 	z-index:1000;
@@ -1326,9 +1326,10 @@ max-height: 290px;
 
 @media (max-width: 600px) {
   #thb {
-    height: 30px;
+    height: 50px;
     position:relative;
 	vertical-align:top;
+	margin-bottom: 10px;
 	
   }
 }
@@ -1356,15 +1357,47 @@ max-height: 290px;
   #actl {
 	
 	width: 100%;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
     	
 		
   }
 }
 
 @media (max-width: 600px) {
+  .catalog-detail-additional {
+	
+	padding-top: 0px;
+	margin-top: 0px;
+    	
+		
+  }
+}
+
+@media (max-width: 600px) {
+  #calc h2 {
+	
+	padding-top: 5px;
+	margin-top: 5px;
+    	
+		
+  }
+}
+
+
+  #calc h2 {
+	
+	padding-top: 5px;
+	margin-top: 5px;
+
+}
+
+
+@media (max-width: 600px) {
   #soc {
 	display:none;
-	
+	margin-bottom: 0px;
+	padding-bottom: 0px;
 	width: 100%;
 	
   }
@@ -1400,6 +1433,38 @@ max-height: 290px;
   #seenit {
     height: 130px;
   }
+}
+
+@media (max-width: 600px) {
+  #side-f {
+    display:none;
+  }
+}
+
+@media (max-width: 600px) {
+  .slick-slide {
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  #slk1{
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  #slk2{
+    max-height: 50px;
+  }
+}
+
+
+#calc
+{
+margin-top: 0px;
+padding-top: 0px;
+
 }
 
 #res_table
@@ -1576,6 +1641,7 @@ border-spacing: 0;
 .catalog-detail .catalog-social {
 	float: right;
 	margin: 1em 0;
+	margin-bottom: 0px;
 }
 
 .catalog-detail .catalog-social .social-button {
@@ -1604,6 +1670,7 @@ border-spacing: 0;
 .catalog-detail .catalog-actions {
 	float: left;
 	margin: 1em 0;
+	margin-bottom:0px; 
 }
 
 .catalog-detail .catalog-actions .actions-button {

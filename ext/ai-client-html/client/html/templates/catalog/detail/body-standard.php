@@ -364,7 +364,7 @@ if( isset( $this->detailProductItem ) )
 					
 						<div class="additional-box" id="calc">
 							<h2 class="header description">Стоимость в Украине</h2>
-							<div class="calcu" id="calcu">
+							<div class="content" id="calcu">
 							
 								<!--<table id="res_table">
  									 <tr>
