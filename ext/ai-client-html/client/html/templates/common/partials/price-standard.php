@@ -65,11 +65,13 @@ $first = true;
 
 		<span class="value">
 			<?= $enc->html( sprintf( $format['value'], $this->number( $priceItem->getValue() ), $currency ), $enc::TRUST ); ?>
+			<?php $price_main = $enc->html( sprintf( $format['value'], $this->number( $priceItem->getValue() ), $currency ), $enc::TRUST );  ?>
 		</span>
 
 		<?php if( $rebate > 0 ) : ?>
 			<span class="rebate">
 				<?= $enc->html( sprintf( $format['rebate'], $this->number( $rebate ), $currency ), $enc::TRUST ); ?>
+				
 			</span>
 			<span class="rebatepercent">
 				<?= $enc->html( sprintf( $format['rebate%'], $this->number( round( $rebate * 100 / ( $priceItem->getValue() + $rebate ) ), 0 ) ), $enc::TRUST ); ?>

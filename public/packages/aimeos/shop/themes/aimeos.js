@@ -1052,6 +1052,7 @@ AimeosCatalogFilter = {
 	 * Toggles the categories if hover isn't available
 	 */
 	setupCategoryToggle: function() {
+		
 
 		$(".catalog-filter-tree").on("click", "h2", function(ev) {
 			$("> ul", ev.delegateTarget).slideToggle();
@@ -1075,7 +1076,7 @@ AimeosCatalogFilter = {
 	 */
 	setupAttributeListsToggle: function() {
 
-		$(".catalog-filter-attribute .attribute-lists .attr-list").hide();
+		
 
 		$(".catalog-filter-attribute fieldset").on("click", "legend", function(ev) {
 			$(".attr-list", ev.delegateTarget).slideToggle();
@@ -1088,9 +1089,9 @@ AimeosCatalogFilter = {
 	 */
 	setupAttributeListsEmtpy: function() {
 
-		$(".catalog-filter-attribute .attribute-lists fieldset").hide();
+		
 
-		$(".catalog-filter-attribute .attribute-lists .attr-count").each(function(ev) {
+		$(".catalog-filter-attribute .attr-count").each(function(ev) {
 			$(this).parents('fieldset').show();
 		});
 	},
@@ -1519,6 +1520,14 @@ document.createElement("article");
  * Disable CSS rules only necessary if no Javascript is available
  */
 $("html").removeClass("no-js");
+$(".level-0").show();
+$(".catalog-filter-supplier").hide();
+$(".attribute-lists").show();
+$(".attr-list").show();
+$(".calcu").show();
+	
+
+
 
 
 Aimeos.loadImages();
@@ -1559,3 +1568,5 @@ jQuery(document).ready(function($) {
 	AimeosAccountFavorite.init();
 	AimeosAccountWatch.init();
 });
+
+

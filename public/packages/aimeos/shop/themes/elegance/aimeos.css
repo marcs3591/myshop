@@ -150,6 +150,7 @@
 	list-style: none;
 	margin: 0.5em 0;
 	padding: 0;
+	border:none;
 }
 
 .aimeos .prototype {
@@ -162,6 +163,7 @@
 	clear: left;
 	color: #555;
 	margin: 0;
+	margin-top:10px;
 }
 
 .aimeos .sort {
@@ -352,13 +354,111 @@
 
 
 /* Catalog filter */
+#side-f {
+	max-width:150px;
+	height:800px;
+	text-align: center;
+	float:left; 
+	display:inline-block;	
+	box-shadow: 0 1px 2px 1px #333,0 3px 6px rgba(0,0,0,0.08);
+	height: auto;
+	background-color: #eee;
+	margin-top:10px;
+}
+
+.legend {
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+line-height: 1.42857143;
+
+}
+
+#attl
+
+{
+line-height: 1.42857143;
+font-weight: normal;
+font-size: 100%;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+color: #B0A060;
+border-bottom: solid 1px #B0A060;
+white-space: nowrap;
+padding: 0.5em 0;
+display: block;
+
+}
+
+
+
+@media (max-width: 600px) {
+  #side-f {
+	max-width:500px;
+	width:100%;
+	float:left; 
+	display:inline-block;
+	height:400px;
+    
+	
+  }
+}
+
+.catalog-list-head
+{
+display:none;
+}
+
+
+.catalog-filter-tree 
+{
+float:left; 
+display:inline-block;
+width:150px;
+}
+
+
+.catalog-filter-supplier
+{
+float:left; 
+display:inline-block;
+}
+
+
+.catalog-filter-attribute
+
+{
+float:left; 
+display:inline-block;
+}
+
+
+.catalog-list 
+{
+float:left; 
+display:inline-block;
+
+max-width:1050px;
+}
+
+.catalog-filter1 h1 {
+	display: none;
+}
+
+
+
 .catalog-filter {
+
 	text-align: center;
 }
 
 .catalog-filter h1 {
 	display: none;
 }
+
+.catalog-filter h2 {
+	font: 12pt/10pt sans-serif;
+	
+}
+
+
 
 .catalog-filter-tree .catcode-home > a {
 	white-space: nowrap;
@@ -435,6 +535,32 @@
 	margin: 0;
 }
 
+.attribute-lists {
+
+overflow:hidden;
+max-width:149px;
+background-color: #eee;
+font-size: 13px;
+line-height: 20px;
+font-family: 'Open Sans',sans-serif;
+}
+
+.attribute-lists:after {
+
+content:".";
+display:block;
+clear:both;
+visibility:hidden;
+}
+
+.attr-list ul
+{
+color:#B0A060;
+font-size: 13px;
+line-height: 20px;
+font-family: 'Open Sans',sans-serif;
+}
+
 .catalog-filter-search .reset {
 	background-color: #FFFFFF;
 	border-color: #B0A060;
@@ -469,7 +595,8 @@
 
 /* Catalog filter, tree section */
 .catalog-filter-tree {
-	margin: 1em 0;
+	
+	max-width:150px;
 }
 
 .catalog-filter-tree > h2 {
@@ -478,22 +605,49 @@
 	cursor: pointer;
 	display: block;
 	float: left;
-	width: 33.33%;
-	padding: 0.5em;
-	margin: 0 0 1em 0;
-	background-color: #FB9806;
+	padding: 0px;
+	margin: 0px;
+	background-color: #B0A060;
+	width:150px;
+}
+
+.attr_name
+
+{
+
+padding: 5px;;
+margin: 5px;;
+color:#030303;
+margin-top:0px;
+font-family: Verdana,Geneva,sans-serif; 
+font-style:solid;
 }
 
 .catalog-filter-tree ul {
 	text-align: left;
 	list-style: none;
-	padding-left: 10%;
+	float:left;
+	margin:0px;
+	padding:0px;
+	list-style-type:none;
+	width:150px;
+	
+	
+}
+
+.catalog-filter-tree h2 {
+	color: #FCFBFA;
+	max-width:150px;
+	margin-bottom:5px;
+	
+	
 }
 
 .catalog-filter-tree > ul {
-	padding: 0.5em 0;
+	
 	display: none;
 	clear: both;
+	max-height:500px;
 }
 
 html.no-js .catalog-filter-tree:hover > ul {
@@ -505,7 +659,7 @@ html.no-js .catalog-filter-tree:hover > ul {
 }
 
 .catalog-filter-tree > ul > li {
-	padding: 0.5em 0;
+	
 }
 
 .catalog-filter-tree a.cat-item {
@@ -532,7 +686,7 @@ html.no-js .catalog-filter-tree:hover > ul {
 }
 
 .catalog-filter-tree .category-selected .selected-category {
-	border: solid 1px #D0D0D0;
+	
 	display: inline-block;
 	margin: 0.5em;
 	padding: 0 0.25em;
@@ -553,12 +707,20 @@ html.no-js .catalog-filter-tree:hover > ul {
 	text-align: center;
 	font-size: 100%;
 	cursor: pointer;
-	width: 33.33%;
+	width: 100%;
+	max-height:500px;
 	float: left;
 	display: block;
-	padding: 0.5em;
-	margin: 0 0 1em 0;
-	background-color: #FB9806;
+	
+	background-color: #B0A060;
+	margin-top:5px;
+	margin-bottom:5px;
+}
+
+.catalog-filter-attribute h2
+
+{
+color: #FCFBFA;
 }
 
 .catalog-filter-attribute .attribute-lists,
@@ -584,6 +746,7 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 
 .catalog-filter-attribute .attribute-selected .attr-list {
 	display: inline-block;
+	
 }
 
 .catalog-filter-attribute .attribute-selected .attr-item {
@@ -605,8 +768,8 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 
 .catalog-filter-attribute fieldset,
 .catalog-filter-supplier fieldset {
-	border-left: 1px solid #D0D0D0;
-	background-color: #FFF;
+	
+	
 	display: inline-block;
 	vertical-align: top;
 	font-weight: normal;
@@ -617,6 +780,7 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 	line-height: 1;
 	margin: 0.5em 0;
 	clear: both;
+	
 }
 
 .catalog-filter-attribute legend {
@@ -639,8 +803,16 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 .catalog-filter-supplier .supplier-lists .attr-list {
 	overflow: auto;
 	padding: 0 0.5em;
-	height: 12em;
+	max-height: 20em;
 }
+
+.attr-list ul 
+
+{
+
+max-height: 20em;
+}
+
 
 .catalog-filter-attribute .attribute-lists li.attr-item,
 .catalog-filter-supplier .supplier-lists li.attr-item {
@@ -693,6 +865,9 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 .catalog-filter-supplier .attr-count {
 	font-weight: normal;
 	cursor: pointer;
+	color: #B0A060;
+	
+	border-bottom:1px solid #eaeaea;
 }
 
 .catalog-filter-attribute .attr-length li.attr-item,
@@ -1070,11 +1245,13 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 
 .catalog-list-type .type-item {
 	padding: 0.5em;
+	display:none;
 }
 
 .catalog-list-type .type-grid:after {
 	font: normal normal normal 20px/1 FontAwesome;
 	content: "\f00a";
+	
 }
 
 .catalog-list-type .type-list:after {
@@ -1095,7 +1272,7 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
   #catimg {
 	width:100%;
 	
-    height: 220px;
+    max-height: 330px;
 	 position:relative;
 	vertical-align:top;
 	z-index:1000;
@@ -1104,31 +1281,32 @@ html.no-js .catalog-filter-supplier:hover .supplier-lists {
 
 @media (max-width: 600px) {
   #imgsg {
-	margin-left: auto;
-	margin-right: auto;
-	display: block;
+	max-height: 290px;
 	width:100%;
-    height: 180px;
+    
 	
   }
 }
 
 @media (max-width: 600px) {
   #image-0 {
-    height: 200px;
+	width:100%; 
+    max-height: 290px;
   }
 }
 
 @media (max-width: 600px) {
   #image-1 {
-	height: 200px;
+	width:100%;
+	max-height: 290px;
 
   }
 }
 
 @media (max-width: 600px) {
   #image-3 {
-height: 200px;
+	width:100%;
+max-height: 290px;
 
 
   }
@@ -1136,7 +1314,8 @@ height: 200px;
 
 @media (max-width: 600px) {
   #image-2 {
-	height: 200px;
+	width:100%;
+	max-height: 290px;
 
   }
 }
@@ -1223,8 +1402,33 @@ height: 200px;
   }
 }
 
+#res_table
+
+{
+font-size: 1.1em;
+width: 100%;
+}
+
+#res_table td:first-child
+{
+text-align: left;
+}
 
 
+#res_table td
+{
+padding: 8px;
+border-bottom: 1px solid #bbb;
+font-weight: 400;
+}
+
+table
+
+{
+border-collapse: collapse;
+border-spacing: 0;
+
+}
 
 
 
@@ -2150,6 +2354,16 @@ height: 200px;
 	font-weight: bold;
 	list-style: none;
 	margin: 0.5em;
+
+
+	
+}
+
+.attr-list
+{
+	border-right: 1px solid #eaeaea;
+border-bottom: 1px solid #eaeaea;
+
 }
 
 .basket-standard-coupon .attr-item .coupon-code,

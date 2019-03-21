@@ -152,6 +152,7 @@ if( isset( $this->detailProductItem ) )
 					<p class="code">
 						<span class="name"><?= $enc->html( $this->translate( 'client', 'Article no.:' ), $enc::TRUST ); ?></span>
 						<span class="value" itemprop="sku"><?= $enc->html( $this->detailProductItem->getCode() ); ?></span>
+						
 					</p>
 					<?php foreach( $this->detailProductItem->getRefItems( 'text', 'short', 'default' ) as $textItem ) : ?>
 						<p class="short" itemprop="description"><?= $enc->html( $textItem->getContent(), $enc::TRUST ); ?></p>
@@ -163,6 +164,7 @@ if( isset( $this->detailProductItem ) )
 
 					<?php if( isset( $this->detailProductItem ) ) : ?>
 						<div class="price-list">
+					
 							<div class="articleitem price price-actual"
 								data-prodid="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
 								data-prodcode="<?= $enc->attr( $this->detailProductItem->getCode() ); ?>">
@@ -360,14 +362,72 @@ if( isset( $this->detailProductItem ) )
 						<div class="catalog-detail-additional">
 
 					
-						<div class="additional-box">
-							<h2 class="header description">Price details</h2>
-							<div class="content description"></div>
-								
+						<div class="additional-box" id="calc">
+							<h2 class="header description">Стоимость в Украине</h2>
+							<div class="calcu" id="calcu">
+							
+								<!--<table id="res_table">
+ 									 <tr>
+									<th>1</th>
+									<th>2</th>
+   									<td>Стоимость авто</td>
+									<td>...</td>
+									<br />
+									<td>Стоимость доставки</td>
+									<td>...</td>
+									<br />
+									<td>Документы(оформление + страховка)</td>
+									<td>...</td>
+									<br />
+									<td>Пошлина (10%)</td>
+									<td>...</td>
+									<br />
+									<td>Акцизный сбор</td>
+									<td>...</td>
+									<br />
+									<td>НДС (20%)</td>
+									<td>...</td>
+									<br />
+									<td>Услуги экспедитора и брокера</td>
+									<td>...</td>
+									<br />
+									<td>Доставка по Украине</td>
+									<td>...</td>
+									<td>Услуги Сервисного Центра (МРЕО)</td>
+									<td>...</td>
+									<br />
+									<td>Налог в пенсионный фонд</td>
+									<td>...</td>
+									<br />
+									<td>Стоимость моих услуг</td>
+									<td>...</td>
+									 </tr>
+									</table>-->
+									<table class="res_table" id="res_table"><tbody><tr><td colspan="2">Стоимость авто</td><td><span class="res">5000</span> <span class="currency">$</span></td></tr><tr class="auction_tax">
+			<td colspan="2">Комиссия аукциона <span class="option">Copart</span></td>
+			<td><span class="res">563</span> <span class="currency">$</span></td>
+		</tr><tr class="delivery_usa"><td colspan="2">Стоимость доставки</td><td><span class="res">1400</span> <span class="currency">$</span></td></tr><tr class="delivery_usa"><td colspan="2">Дополнительно (страховка, документы)</td><td><span class="res">240</span> <span class="currency">$</span></td></tr><tr class="duty"><td colspan="2">Пошлина (10%)</td><td><span class="res">556</span> <span class="currency">$</span></td></tr><tr class="excise"><td>Акцизный сбор</td><td></td><td><span class="res">723</span> <span class="currency">$</span></td></tr><tr class="tax"><td colspan="2">НДС (20%)</td><td><span class="res">1369</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Услуги экспедитора и брокера</td><td><span class="res">950</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Доставка по Украине</td><td><span class="res">180</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Сертификация авто</td><td><span class="res">320</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Услуги Сервисного Центра (МРЕО)</td><td><span class="res">77</span> <span class="currency">$</span></td></tr><tr class="pension"><td colspan="2">Налог в пенсионный фонд</td><td><span class="res">167</span> <span class="currency">$</span></td></tr><tr class="price_mm"><td>Стоимость наших услуг</td><td></td><td><span class="res">800</span> <span class="currency">$</span></td></tr><tr class="total">
+			<td colspan="2">Итоговая стоимость</td>
+			<td><span class="res">12346</span> <span class="currency">$</span></td>
+		</tr></tbody></table>
 							</div>
 						</div>
 					
 			</div>
+			</div>
+
+				<div class="123"
+								data-prodid="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
+								data-prodcode="<?= $enc->attr( $this->detailProductItem->getCode() ); ?>">
+								<?= $this->partial(
+									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
+									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
+								); $price_actual=$this->partial(
+									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
+									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
+								); echo $price_actual; ?>
+							</div>
+
 			</div>
 			
 
