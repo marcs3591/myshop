@@ -238,6 +238,8 @@ if( isset( $this->detailProductItem ) )
 							</div>
 						<?php endif; ?>
 
+
+
 						<div class="catalog-detail-basket-attribute">
 							<?= $this->partial(
 								/** client/html/common/partials/attribute
@@ -406,7 +408,19 @@ if( isset( $this->detailProductItem ) )
 									<table class="res_table" id="res_table"><tbody><tr><td colspan="2">Стоимость авто</td><td><span class="res">5000</span> <span class="currency">$</span></td></tr><tr class="auction_tax">
 			<td colspan="2">Комиссия аукциона <span class="option">Copart</span></td>
 			<td><span class="res">563</span> <span class="currency">$</span></td>
-		</tr><tr class="delivery_usa"><td colspan="2">Стоимость доставки</td><td><span class="res">1400</span> <span class="currency">$</span></td></tr><tr class="delivery_usa"><td colspan="2">Дополнительно (страховка, документы)</td><td><span class="res">240</span> <span class="currency">$</span></td></tr><tr class="duty"><td colspan="2">Пошлина (10%)</td><td><span class="res">556</span> <span class="currency">$</span></td></tr><tr class="excise"><td>Акцизный сбор</td><td></td><td><span class="res">723</span> <span class="currency">$</span></td></tr><tr class="tax"><td colspan="2">НДС (20%)</td><td><span class="res">1369</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Услуги экспедитора и брокера</td><td><span class="res">950</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Доставка по Украине</td><td><span class="res">180</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Сертификация авто</td><td><span class="res">320</span> <span class="currency">$</span></td></tr><tr><td colspan="2">Услуги Сервисного Центра (МРЕО)</td><td><span class="res">77</span> <span class="currency">$</span></td></tr><tr class="pension"><td colspan="2">Налог в пенсионный фонд</td><td><span class="res">167</span> <span class="currency">$</span></td></tr><tr class="price_mm"><td>Стоимость наших услуг</td><td></td><td><span class="res">800</span> <span class="currency">$</span></td></tr><tr class="total">
+
+		</tr><tr class="delivery_usa"><td colspan="2">Стоимость доставки</td><td><span class="res">1400</span>
+		<span class="currency">$</span></td></tr><tr class="delivery_usa"><td colspan="2">Дополнительно (страховка, документы)</td><td><span class="res">240</span>
+		 <span class="currency">$</span></td></tr><tr class="duty"><td colspan="2">Пошлина (10%)</td><td><span class="res" id="dutyd"></span>
+		 	<span class="currency">$</span></td></tr><tr class="excise"><td>Акцизный сбор</td><td></td><td><span class="res">723</span>
+		 	 <span class="currency">$</span></td></tr><tr class="tax"><td colspan="2">НДС (20%)</td><td><span class="res">1369</span> 
+		 	 	<span class="currency">$</span></td></tr><tr><td colspan="2">Услуги экспедитора и брокера</td><td><span class="res">950</span> 
+		 	 		<span class="currency">$</span></td></tr><tr><td colspan="2">Доставка по Украине</td><td><span class="res">180</span> 
+		 	 			<span class="currency">$</span></td></tr><tr><td colspan="2">Сертификация авто</td><td><span class="res">320</span> 
+		 	 				<span class="currency">$</span></td></tr><tr><td colspan="2">Услуги Сервисного Центра (МРЕО)</td><td><span class="res">77</span> 
+		 	 					<span class="currency">$</span></td></tr><tr class="pension"><td colspan="2">Налог в пенсионный фонд</td><td><span class="res">167</span>
+		 	 					 <span class="currency">$</span></td></tr><tr class="price_mm"><td>Стоимость наших услуг</td><td></td><td><span class="res">800</span> 
+		 	 					 	<span class="currency">$</span></td></tr><tr class="total">
 			<td colspan="2">Итоговая стоимость</td>
 			<td><span class="res">12346</span> <span class="currency">$</span></td>
 		</tr></tbody></table>
@@ -414,58 +428,21 @@ if( isset( $this->detailProductItem ) )
 						</div>
 					
 			</div>
-			</div>
 
-				<div class="123"
-								data-prodid="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
-								data-prodcode="<?= $enc->attr( $this->detailProductItem->getCode() ); ?>">
-								<?= $this->partial(
-									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
-									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
-								); $price_actual=$this->partial(
-									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
-									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
-								); echo $price_actual; ?>
-							</div>
+			 <script type="text/javascript">
+			 	
+      var count = document.getElementById("4count").textContent;
+      var count1 = count.substring(0,6).replace(/ /g,'');
+      var count2 = parseInt(count1, 10);
+      document.getElementById("dutyd").textContent = count2 + 200;
+     
+  		</script>
 
-			</div>
-			
-
-
-			<div class="col-sm-12" id="soc">
-
-				<?php if( $this->detailProductItem->getType() === 'bundle'
-					&& ( $posItems = $this->detailProductItem->getRefItems( 'product', null, 'default' ) ) !== []
-					&& ( $products = $getProductList( $posItems, $prodItems ) ) !== [] ) : ?>
-
-					<section class="catalog-detail-bundle">
-						<h2 class="header"><?= $this->translate( 'client', 'Bundled products' ); ?></h2>
-						<?= $this->partial(
-							$this->config( 'client/html/common/partials/products', 'common/partials/products-standard.php' ),
-							array( 'products' => $products, 'itemprop' => 'isRelatedTo' )
-						); ?>
-					</section>
-
-				<?php endif; ?>
-
-
-				<div class="catalog-detail-additional">
-
-					<?php if( ( $textItems = $this->detailProductItem->getRefItems( 'text', 'long' ) ) !== [] ) : ?>
-						<div class="additional-box">
-							<h2 class="header description"><?= $enc->html( $this->translate( 'client', 'Description' ), $enc::TRUST ); ?></h2>
-							<div class="content description">
-								<?php foreach( $textItems as $textItem ) : ?>
-									<div class="long item"><?= $enc->html( $textItem->getContent(), $enc::TRUST ); ?></div>
-								<?php endforeach; ?>
-							</div>
-						</div>
-					<?php endif; ?>
-
-					<?php if( count( $attrMap ) > 0 || count( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) ) > 0 ) : ?>
-						<div class="additional-box">
-							<h2 class="header attributes"><?= $enc->html( $this->translate( 'client', 'Characteristics' ), $enc::TRUST ); ?></h2>
-							<div class="content attributes">
+			<div class="catalog-detail-additional">
+				
+							<div class="additional-box" >
+								<h2 class="header description" id="stf"><?= $enc->html( $this->translate( 'client', 'Characteristics' ), $enc::TRUST ); ?></h2>
+							<div class="content">
 								<table class="attributes">
 									<tbody>
 										<?php foreach( $this->detailProductItem->getRefItems( 'attribute', null, 'default' ) as $attrId => $attrItem ) : ?>
@@ -532,61 +509,57 @@ if( isset( $this->detailProductItem ) )
 								</table>
 							</div>
 						</div>
-					<?php endif; ?>
 
-					<?php if( count( $propMap ) > 0 ) : ?>
-						<div class="additional-box">
-							<h2 class="header properties"><?= $enc->html( $this->translate( 'client', 'Properties' ), $enc::TRUST ); ?></h2>
-							<div class="content properties">
-								<table class="properties">
-									<tbody>
-										<?php foreach( $propMap as $type => $propItems ) : ?>
-											<?php foreach( $propItems as $propertyItem ) : $classes = ''; ?>
-												<?php
-													if( $propertyItem->getParentId() != $this->detailProductItem->getId()
-														&& isset( $subPropDeps[ $propertyItem->getId() ] )
-													) {
-														$classes .= ' subproduct';
-														foreach( $subPropDeps[ $propertyItem->getId() ] as $prodid ) {
-															$classes .= ' subproduct-' . $prodid;
-														}
-													}
-												?>
-												<tr class="item<?= $classes; ?>">
-													<td class="name"><?= $enc->html( $this->translate( 'client/code', $propertyItem->getType() ), $enc::TRUST ); ?></td>
-													<td class="value"><?= $enc->html( $propertyItem->getValue() ); ?></td>
-												</tr>
-											<?php endforeach; ?>
-										<?php endforeach; ?>
-									</tbody>
-								</table>
+
+							
+			
+			</div>
+
+			<div class="catalog-detail-additional">
+				
+							<div class="additional-box" >
+								<h2 class="header description" id="stf">Договор</h2>
+							<div class="content">
 							</div>
 						</div>
-					<?php endif; ?>
+					</div>
 
-					<?php $mediaList = $this->get( 'detailMediaItems', [] ); ?>
-					<?php if( ( $mediaItems = $this->detailProductItem->getRefItems( 'media', null, 'download' ) ) !== [] ) : ?>
-						<div class="additional-box">
-							<h2 class="header downloads"><?= $enc->html( $this->translate( 'client', 'Downloads' ), $enc::TRUST ); ?></h2>
-							<ul class="content downloads">
-								<?php foreach( $mediaItems as $id => $item ) : ?>
-									<?php if( isset( $mediaList[$id] ) ) { $item = $mediaList[$id]; } ?>
-									<li class="item">
-										<a href="<?= $this->content( $item->getUrl() ); ?>" title="<?= $enc->attr( $item->getName() ); ?>">
-											<img class="media-image"
-												src="<?= $this->content( $item->getPreview() ); ?>"
-												alt="<?= $enc->attr( $item->getName() ); ?>"
-											/>
-											<span class="media-name"><?= $enc->html( $item->getName() ); ?></span>
-										</a>
-									</li>
-								<?php endforeach; ?>
-							</ul>
-						</div>
-					<?php endif; ?>
+				<div class="123" id="for_c"
+								data-prodid="<?= $enc->attr( $this->detailProductItem->getId() ); ?>"
+								data-prodcode="<?= $enc->attr( $this->detailProductItem->getCode() ); ?>">
+								<?= $this->partial(
+									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
+									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
+								); $price_actual=$this->partial(
+									$this->config( 'client/html/common/partials/price', 'common/partials/price-standard.php' ),
+									array( 'prices' => $this->detailProductItem->getRefItems( 'price', null, 'default' ) )
+								); echo $price_actual; ?>
+							</div>
 
-				</div>
 
+			</div>
+		</div>
+			
+
+
+			<div class="col-sm-12" id="soc">
+
+				<?php if( $this->detailProductItem->getType() === 'bundle'
+					&& ( $posItems = $this->detailProductItem->getRefItems( 'product', null, 'default' ) ) !== []
+					&& ( $products = $getProductList( $posItems, $prodItems ) ) !== [] ) : ?>
+
+					<section class="catalog-detail-bundle">
+						<h2 class="header"><?= $this->translate( 'client', 'Bundled products' ); ?></h2>
+						<?= $this->partial(
+							$this->config( 'client/html/common/partials/products', 'common/partials/products-standard.php' ),
+							array( 'products' => $products, 'itemprop' => 'isRelatedTo' )
+						); ?>
+					</section>
+
+				<?php endif; ?>
+
+
+				
 
 				<?php if( ( $posItems = $this->detailProductItem->getRefItems( 'product', null, 'suggestion' ) ) !== []
 					&& ( $products = $getProductList( $posItems, $prodItems ) ) !== [] ) : ?>

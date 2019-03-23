@@ -1,4 +1,4 @@
-<?php header("Location: www.marcsauto.com.ua/list"); ?>
+<?php return redirect()->to('/list')->send();?>
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>

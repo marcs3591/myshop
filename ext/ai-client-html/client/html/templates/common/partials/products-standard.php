@@ -115,7 +115,7 @@ $detailConfig = $this->config( 'client/html/catalog/detail/url/config', [] );
 
 			<a href="<?= $enc->attr( $this->url( ( $productItem->getTarget() ?: $detailTarget ), $detailController, $detailAction, $params, [], $detailConfig ) ); ?>">
 
-				<div class="media-list">
+				<div class="media-list" >
 					<?php foreach( $productItem->getRefItems( 'media', 'default', 'default' ) as $mediaItem ) : ?>
 						<?php $mediaUrl = $enc->attr( $this->content( $mediaItem->getPreview() ) ); ?>
 						<?php if( $firstImage === true ) : $firstImage = false; ?>
@@ -126,7 +126,7 @@ $detailConfig = $this->config( 'client/html/catalog/detail/url/config', [] );
 							</noscript>
 							<div class="media-item lazy-image" data-src="<?= $mediaUrl; ?>"></div>
 						<?php else : ?>
-							<div class="media-item" data-src="<?= $mediaUrl; ?>"></div>
+							<div class="media-item" id="bottom_im" data-src="<?= $mediaUrl; ?>"></div>
 						<?php endif; ?>
 					<?php endforeach; ?>
 				</div>

@@ -63,7 +63,7 @@ $first = true;
 			<?= $enc->html( sprintf( $format['quantity'], $priceItem->getQuantity() ), $enc::TRUST ); ?>
 		</span>
 
-		<span class="value">
+		<span class="value" id="4count">
 			<?= $enc->html( sprintf( $format['value'], $this->number( $priceItem->getValue() ), $currency ), $enc::TRUST ); ?>
 			<?php $price_main = $enc->html( sprintf( $format['value'], $this->number( $priceItem->getValue() ), $currency ), $enc::TRUST );  ?>
 		</span>
