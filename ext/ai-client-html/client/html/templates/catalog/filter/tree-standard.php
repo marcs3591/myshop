@@ -33,7 +33,7 @@ $config = $this->config( 'client/html/catalog/lists/url/config', [] );
 
 
 ?>
-<ul class="level-<?= $enc->attr( $level ); ?>">
+
 	<?php foreach( $this->get( 'nodes', [] ) as $item ) : ?>
 		<?php if( $item->getStatus() > 0 ) : ?>
 
@@ -42,9 +42,9 @@ $config = $this->config( 'client/html/catalog/lists/url/config', [] );
 			<?php $class = ( $item->hasChildren() ? ' withchild' : ' nochild' ) . ( isset( $path[$id] ) ? ' active' : '' ); ?>
 			<?php $class .= ' catcode-' . $item->getCode() . ( isset( $config['css-class'] ) ? ' ' . $config['css-class'] : '' ); ?>
 
-			<li class="cat-item catid-<?= $enc->attr( $id . $class ); ?>" data-id="<?= $id; ?>" >
+			
 
-				<a class="cat-item" href="<?= $enc->attr( $this->url( ( $item->getTarget() ?: $target ), $controller, $action, $params, [], $config ) ); ?>"><!--
+				<a class="cat-item" id="page_menu_group_manage" href="<?= $enc->attr( $this->url( ( $item->getTarget() ?: $target ), $controller, $action, $params, [], $config ) ); ?>"><!--
 					--><div class="media-list"><!--
 
 						<?php foreach( $item->getListItems( 'media', 'icon' ) as $listItem ) : ?>
@@ -65,7 +65,7 @@ $config = $this->config( 'client/html/catalog/lists/url/config', [] );
 					<?= $this->partial( $this->config( 'client/html/catalog/filter/partials/tree', 'catalog/filter/tree-standard.php' ), $values ); ?>
 				<?php endif; ?>
 
-			</li>
+			
 		<?php endif; ?>
 	<?php endforeach; ?>
-</ul>
+

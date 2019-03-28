@@ -145,7 +145,7 @@ $params = $this->param();
 				<?php if( !empty( $attributes ) ) : ?>
 
 					--><fieldset class="attr-<?= $enc->attr( $attrType, $enc::TAINT, '-' ); ?>">
-						<p class="attr_name"><?= $enc->html( $this->translate( 'client/code', $attrType ), $enc::TRUST ); ?></p>
+						<a id="page_menu_group_manage"><span class="attr_name" ><?= $enc->html( $this->translate( 'client/code', $attrType ), $enc::TRUST ); ?></span></a>
 						<ul class="attr-list"><!--
 
 							<?php $fparam = ( in_array( $attrType, $oneof ) ? array( 'f_oneid', $attrType, '' ) : ( in_array( $attrType, $options ) ? array( 'f_optid', '' ) : array( 'f_attrid', '' ) ) ); ?>
